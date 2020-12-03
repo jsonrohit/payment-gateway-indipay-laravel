@@ -34,6 +34,14 @@ This is required so as to avoid CSRF verification on the Response Url from the p
 to
 <pre><code>App\Http\Middleware\VerifyCsrfMiddleware::class,</code></pre>
 
+## getting 419 error
+go to app/Http/middleware/VerfiyCsrfToken.php
+```php
+ protected $except = [
+        //add route
+    ];
+```
+
 ## file configuration 
 go to config/indipay.php
 ```php 
@@ -47,7 +55,6 @@ go to config/indipay.php
 go to vendor\Softon\Indipay\src\view\payumoney.blade.php
 ```php 
 // controller send data of this form 
-form filed
 ````
 
 <h2>Usage</h2>
