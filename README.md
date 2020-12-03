@@ -91,6 +91,12 @@ From version v1.0.12 `Indipay` has started implementing verify method in some ga
     ]);
 
 ```
+
+## if You getting these type error 
+```php 
+Class Softon\Indipay\Gateways\payumoneyGateway does not exist
+```
+>Solution: go vendor Softon\Indipay\Gateways\PayUMoneyGateway.php and rename payumoneyGateway.php
 The parameters to be passed, again depends on Gateway used.
 
 > **Verify Feature Currently Supported in** : Paytm, Mocker
