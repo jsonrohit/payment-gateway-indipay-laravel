@@ -34,6 +34,22 @@ This is required so as to avoid CSRF verification on the Response Url from the p
 to
 <pre><code>App\Http\Middleware\VerifyCsrfMiddleware::class,</code></pre>
 
+## file configuration 
+go to config/indipay.php
+```php 
+ 'gateway' => 'payumoney',                // Replace with the name of default gateway you want to use
+
+  'testMode'  => true,                   // True for Testing the Gateway [For production false]
+  
+  'merchantKey'  => env('INDIPAY_MERCHANT_KEY', 'XXXX5Sw'),
+   'salt'  => env('INDIPAY_SALT', 'XXXXXJLD'),
+```
+go to vendor\Softon\Indipay\src\view\payumoney.blade.php
+```php 
+// controller send data of this form 
+form filed
+````
+
 <h2>Usage</h2>
 
 Edit the config/indipay.php. Set the appropriate Gateway parameters. Also set the default gateway to use by setting the `gateway` key in config file. Then in your code... <br>
@@ -96,7 +112,7 @@ From version v1.0.12 `Indipay` has started implementing verify method in some ga
 ```php 
 Class Softon\Indipay\Gateways\payumoneyGateway does not exist
 ```
->Solution: go vendor Softon\Indipay\Gateways\PayUMoneyGateway.php and rename payumoneyGateway.php
+>Solution: go vendor Softon\Indipay\Gateways\PayUMoneyGateway.php and rename PayUMoneyGateway.php with payumoneyGateway.php.
 The parameters to be passed, again depends on Gateway used.
 
 > **Verify Feature Currently Supported in** : Paytm, Mocker
